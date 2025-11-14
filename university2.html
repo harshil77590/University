@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Business Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="sticky-nav">
+            <div class="nav-container">
+                <h1>Global Business Academy</h1>
+                <ul class="nav-menu">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#placements">Placements</a></li>
+                    <li><a href="#lead-form">Enquire</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select id="university-select">
+                        <option value="">Select University</option>
+                        <option value="university1.html">Tech Innovators University</option>
+                        <option value="university2.html" selected>Global Business Academy</option>
+                    </select>
+                    <a href="apply.html" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero animate-fade-in">
+            <img src="images/business-academy-campus.jpg" alt="Global Business Academy Campus" class="hero-image">
+            <h2>Global Business Academy</h2>
+            <p>Cultivating visionary business leaders through global insights, innovation, and entrepreneurial excellence.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">5,000+</span>
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Placement Rate</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Corporate Partners</span>
+                </div>
+            </div>
+        </section>
+        <section id="overview" class="animate-slide-up">
+            <h3>Overview</h3>
+            <p>Global Business Academy offers world-class business education with a focus on global perspectives, entrepreneurial skills, and leadership development. Our programs are designed to prepare students for the dynamic world of business through innovative teaching methods and industry partnerships.</p>
+        </section>
+        <section id="courses" class="animate-slide-up">
+            <h3>Courses Offered</h3>
+            <ul>
+                <li><strong>MBA:</strong> Master's in Business Administration with specialization options in various fields.</li>
+                <li><strong>BBA:</strong> Bachelor's in Business Administration covering core business subjects and fundamentals.</li>
+                <li><strong>Finance:</strong> Specialized program in financial management, investment, and risk analysis.</li>
+                <li><strong>Marketing:</strong> Focus on marketing strategies, consumer behavior, digital marketing, and brand management.</li>
+            </ul>
+        </section>
+        <section id="fees" class="animate-slide-up">
+            <h3>Fees</h3>
+            <p>Course-wise fees vary. Click below to check detailed fees.</p>
+            <button id="check-fees-btn" class="btn">Check Course-wise Fees</button>
+        </section>
+        <section id="placements" class="animate-slide-up">
+            <h3>Placements</h3>
+            <p>Our graduates secure positions in multinational corporations with average salaries of ₹10 LPA. We boast a 98% placement rate with partnerships with top global firms.</p>
+        </section>
+        <section id="facilities" class="animate-slide-up">
+            <h3>Facilities</h3>
+            <p>Advanced classrooms equipped with modern technology, business simulation labs, auditoriums for events, recreational areas, and dedicated entrepreneurship centers.</p>
+        </section>
+        <section id="ctas" class="animate-slide-up">
+            <a href="brochure.pdf" class="btn" download>Download Brochure</a>
+            <a href="apply.html" class="btn">Apply Now</a>
+        </section>
+        <section id="lead-form" class="animate-slide-up">
+            <h3>Enquire Now</h3>
+            <form id="lead-form">
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number (10-digit)" pattern="[0-9]{10}" required>
+                <select name="state" required>
+                    <option value="">Select State</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select>
+                <select name="course" required>
+                    <option value="">Course Interested</option>
+                    <option value="MBA">MBA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+                <select name="intakeYear" required>
+                    <option value="">Intake Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+                <label><input type="checkbox" name="consent" required> I agree to the terms and conditions.</label>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <div id="form-message"></div>
+        </section>
+    </main>
+    <div id="fees-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Course-wise Fees</h3>
+            <div id="fees-content"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Global Business Academy</h4>
+                <p>Shaping future business leaders with global perspectives and entrepreneurial excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@gba.edu.in<br>Phone: +91-40-1234-5678<br>Address: Hyderabad, Telangana</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#placements">Placements</a></li>
+                    <li><a href="apply.html">Apply Now</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Global Business Academy. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

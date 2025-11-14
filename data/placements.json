@@ -1,0 +1,12 @@
+{
+    "Tech Innovators University": {
+        "averageSalary": "8 LPA",
+        "topCompanies": ["Google", "Microsoft", "Amazon", "Infosys"],
+        "placementRate": "95%"
+    },
+    "Global Business Academy": {
+        "averageSalary": "10 LPA",
+        "topCompanies": ["McKinsey", "Goldman Sachs", "Coca-Cola", "HDFC Bank"],
+        "placementRate": "98%"
+    }
+}

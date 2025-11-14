@@ -1,0 +1,52 @@
+Dummy brochure content
+frkfrnfbihfbrfibferjkfebfjkf fhi
+Task Overview
+The candidate must build and deploy:
+1.	Two Single-Page Landing Pages for any two private universities.
+
+2.	A lead form integrated with a simple Pipedream API workflow.
+
+3.	A basic set of working APIs returning simple and nested JSONs.
+
+4.	All pages must be mobile & desktop responsive and live with SSL on any free hosting platform.
+
+________________________________________
+🛠️ Detailed Requirements
+Landing Pages (LP-1 & LP-2)
+●	Each page should contain:
+
+○	University information (Overview, Courses, Fees, Placements, Facilities, etc.)
+
+○	CTAs: “Check Course-wise Fees”, “Download Brochure”, “Apply Now”
+
+○	Lead Form Fields:
+
+■	Full Name
+
+■	Email
+
+■	Phone Number (10-digit, India)
+
+■	State
+
+■	Course Interested
+
+■	Intake Year
+
+■	Consent Checkbox
+
+●	Behavior:
+
+○	On submit → Post data to your Pipedream endpoint.
+
+○	Show success/error message without page refresh.
+
+●	Responsive Design: Must work seamlessly on mobile and desktop.
+
+●	Modal: Clicking “Check Course-wise Fees” should open a modal with dynamic fee range from JSON/API.
+
+
+Submission Format
+
+- Landing Page URL
+- Drive Link of Folder

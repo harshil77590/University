@@ -1,0 +1,34 @@
+{
+    "Computer Science": {
+        "min": 500000,
+        "max": 800000
+    },
+    "Information Technology": {
+        "min": 450000,
+        "max": 700000
+    },
+    "Data Science": {
+        "min": 600000,
+        "max": 900000
+    },
+    "Artificial Intelligence": {
+        "min": 700000,
+        "max": 1000000
+    },
+    "MBA": {
+        "min": 800000,
+        "max": 1200000
+    },
+    "BBA": {
+        "min": 400000,
+        "max": 600000
+    },
+    "Finance": {
+        "min": 500000,
+        "max": 750000
+    },
+    "Marketing": {
+        "min": 450000,
+        "max": 650000
+    }
+}

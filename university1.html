@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Innovators University</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="sticky-nav">
+            <div class="nav-container">
+                <h1>Tech Innovators University</h1>
+                <ul class="nav-menu">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#placements">Placements</a></li>
+                    <li><a href="#lead-form">Enquire</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select id="university-select">
+                        <option value="">Select University</option>
+                        <option value="university1.html" selected>Tech Innovators University</option>
+                        <option value="university2.html">Global Business Academy</option>
+                    </select>
+                    <a href="apply.html" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero animate-fade-in">
+            <img src="images/tech-university-campus.jpg" alt="Tech Innovators University Campus" class="hero-image">
+            <h2>Tech Innovators University</h2>
+            <p>Empowering the next generation of technology leaders through innovation, excellence, and industry collaboration.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">10,000+</span>
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Placement Rate</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Research Labs</span>
+                </div>
+            </div>
+        </section>
+        <section id="overview" class="animate-slide-up">
+            <h3>About Tech Innovators University</h3>
+            <p>Established in 2010, Tech Innovators University stands at the forefront of technological education in India. As a UGC-approved institution, we are committed to nurturing the next generation of tech leaders through cutting-edge curricula, industry partnerships, and a research-driven approach. Our 500-acre campus in Hyderabad houses over 10,000 students and features world-class infrastructure designed to foster innovation and collaboration.</p>
+            <div class="stats">
+                <div class="stat"><strong>10,000+</strong><br>Students</div>
+                <div class="stat"><strong>500+</strong><br>Faculty Members</div>
+                <div class="stat"><strong>95%</strong><br>Placement Rate</div>
+                <div class="stat"><strong>50+</strong><br>Research Labs</div>
+            </div>
+        </section>
+        <section id="courses" class="animate-slide-up">
+            <h3>Courses Offered</h3>
+            <ul>
+                <li><strong>Computer Science:</strong> Comprehensive program covering algorithms, software engineering, and system design.</li>
+                <li><strong>Information Technology:</strong> Focus on IT infrastructure, cybersecurity, and network management.</li>
+                <li><strong>Data Science:</strong> Learn data analysis, machine learning, and big data technologies.</li>
+                <li><strong>Artificial Intelligence:</strong> Advanced AI concepts including neural networks, robotics, and ethical AI.</li>
+            </ul>
+        </section>
+        <section id="fees" class="animate-slide-up">
+            <h3>Fees</h3>
+            <p>Course-wise fees vary. Click below to check detailed fees.</p>
+            <button id="check-fees-btn" class="btn">Check Course-wise Fees</button>
+        </section>
+        <section id="placements" class="animate-slide-up">
+            <h3>Placements & Career Support</h3>
+            <p>Our dedicated Career Development Center has achieved a remarkable 95% placement rate, with graduates securing positions at top-tier companies including Google, Microsoft, Amazon, and Infosys. The average starting salary stands at ₹12 LPA, with many students receiving offers exceeding ₹20 LPA. Our industry partnerships and rigorous training programs ensure our students are job-ready from day one.</p>
+        </section>
+        <section id="facilities" class="animate-slide-up">
+            <h3>World-Class Facilities</h3>
+            <p>Our state-of-the-art campus features 50+ specialized research labs, including AI and Robotics centers equipped with NVIDIA DGX systems. The Central Library houses over 500,000 volumes and provides access to 10,000+ online journals. Students enjoy modern hostels with Wi-Fi connectivity, gymnasiums, and recreational facilities. Our Innovation Hub supports 200+ startup ventures annually, fostering entrepreneurship among our students.</p>
+        </section>
+        <section id="ctas" class="animate-slide-up">
+            <a href="brochure.pdf" class="btn" download>Download Brochure</a>
+            <a href="apply.html" class="btn">Apply Now</a>
+        </section>
+        <section id="testimonials" class="animate-slide-up">
+            <h3>What Our Students Say</h3>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Tech Innovators University transformed my career. The hands-on projects and industry exposure prepared me for roles at top tech companies."</p>
+                    <cite>- Rahul Sharma, Software Engineer at Google</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"The AI program here is world-class. I learned cutting-edge technologies and now lead AI initiatives at Microsoft."</p>
+                    <cite>- Priya Patel, AI Researcher at Microsoft</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Exceptional faculty and state-of-the-art labs made my learning experience unforgettable. Highly recommend!"</p>
+                    <cite>- Arjun Kumar, Data Scientist at Amazon</cite>
+                </div>
+            </div>
+        </section>
+        <section id="accreditation" class="animate-slide-up">
+            <h3>Accreditation & Recognition</h3>
+            <p>Tech Innovators University is accredited by UGC and recognized by AICTE. Our programs are NBA accredited, ensuring the highest standards of education. We are ranked among the top 10 private universities in India by NIRF and have received the 'Best Emerging University' award for three consecutive years.</p>
+        </section>
+        <section id="lead-form" class="animate-slide-up">
+            <h3>Enquire Now</h3>
+            <form id="lead-form">
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number (10-digit)" pattern="[0-9]{10}" required>
+                <select name="state" required>
+                    <option value="">Select State</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select>
+                <select name="course" required>
+                    <option value="">Course Interested</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                </select>
+                <select name="intakeYear" required>
+                    <option value="">Intake Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+                <label><input type="checkbox" name="consent" required> I agree to the terms and conditions.</label>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <div id="form-message"></div>
+        </section>
+    </main>
+    <div id="fees-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Course-wise Fees</h3>
+            <div id="fees-content"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tech Innovators University</h4>
+                <p>Leading the way in technology education with cutting-edge innovation and research.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@tiu.edu.in<br>Phone: +91-40-2345-6789<br>Address: Hyderabad, Telangana</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#placements">Placements</a></li>
+                    <li><a href="apply.html">Apply Now</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tech Innovators University. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

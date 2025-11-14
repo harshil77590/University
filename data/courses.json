@@ -1,0 +1,46 @@
+{
+    "Tech Innovators University": [
+        {
+            "name": "Computer Science",
+            "duration": "4 years",
+            "description": "Comprehensive program covering algorithms, programming, and software development."
+        },
+        {
+            "name": "Information Technology",
+            "duration": "4 years",
+            "description": "Focus on IT infrastructure, networking, and cybersecurity."
+        },
+        {
+            "name": "Data Science",
+            "duration": "4 years",
+            "description": "Learn data analysis, machine learning, and big data technologies."
+        },
+        {
+            "name": "Artificial Intelligence",
+            "duration": "4 years",
+            "description": "Advanced AI concepts including neural networks and robotics."
+        }
+    ],
+    "Global Business Academy": [
+        {
+            "name": "MBA",
+            "duration": "2 years",
+            "description": "Master's in Business Administration with specialization options."
+        },
+        {
+            "name": "BBA",
+            "duration": "3 years",
+            "description": "Bachelor's in Business Administration covering core business subjects."
+        },
+        {
+            "name": "Finance",
+            "duration": "3 years",
+            "description": "Specialized program in financial management and investment."
+        },
+        {
+            "name": "Marketing",
+            "duration": "3 years",
+            "description": "Focus on marketing strategies, consumer behavior, and digital marketing."
+        }
+    ]
+}
