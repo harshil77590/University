@@ -224,6 +224,46 @@ form {
     margin: 0 auto;
 }
 
+#apply-form form {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#apply-form form h4 {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #1e3a8a;
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 0.5rem;
+}
+
+#apply-form form textarea {
+    grid-column: 1 / -1;
+}
+
+#apply-form form label {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    font-weight: normal;
+    margin-top: 1rem;
+}
+
+#apply-form form label input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+#apply-form form button {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+}
+
 form input, form select, form textarea {
     margin-bottom: 1rem;
     padding: 0.75rem;
@@ -403,6 +443,14 @@ form textarea {
         height: 200px;
     }
 
+    .hero-stats {
+        gap: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
     .btn {
         display: block;
         width: 100%;
@@ -425,6 +473,15 @@ form textarea {
 
     form {
         max-width: 100%;
+    }
+
+    #apply-form form {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    #apply-form form h4 {
+        margin-top: 1.5rem;
     }
 
     .modal-content {

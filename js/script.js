@@ -16,6 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (selectedUniversity && universitySelect) {
         universitySelect.value = selectedUniversity;
     }
+
+    // Check URL parameters for university selection
+    const urlParams = new URLSearchParams(window.location.search);
+    const universityParam = urlParams.get('university');
+
+    if (universityParam && universitySelect) {
+        if (universityParam === 'tiu') {
+            universitySelect.value = 'university1.html';
+            localStorage.setItem('selectedUniversity', 'university1.html');
+        } else if (universityParam === 'gba') {
+            universitySelect.value = 'university2.html';
+            localStorage.setItem('selectedUniversity', 'university2.html');
+        }
+    }
 });
 
 // Modal for fees
@@ -50,7 +64,23 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
+    if (event.target == document.getElementById('success-modal')) {
+        document.getElementById('success-modal').style.display = 'none';
+    }
 }
+
+// Close modal functionality for success modal
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('close-modal-btn')) {
+        document.getElementById('success-modal').style.display = 'none';
+    }
+    if (event.target.classList.contains('close')) {
+        const modal = event.target.closest('.modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
 
 // Form validation and submission
 document.getElementById('lead-form').addEventListener('submit', function(e) {
@@ -111,14 +141,30 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
 
-    // Simulate form submission (replace with actual endpoint)
-    console.log('Lead form submitted:', data);
-
-    // Show success popup
-    alert('Thank you for your enquiry! We will get back to you soon.');
-
-    document.getElementById('form-message').innerHTML = '<div class="success-message">Thank you for your enquiry! We will get back to you soon.</div>';
-    this.reset();
+    // Send data to Flask server
+    fetch('http://localhost:5000/submit-lead', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            // Show success modal
+            const successModal = document.getElementById('success-modal');
+            successModal.style.display = 'block';
+            document.getElementById('form-message').innerHTML = '<div class="success-message">Thank you for your enquiry! We will get back to you soon.</div>';
+            this.reset();
+        } else {
+            document.getElementById('form-message').innerHTML = '<div class="error-message">Error submitting form. Please try again.</div>';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('form-message').innerHTML = '<div class="error-message">Error submitting form. Please try again.</div>';
+    });
 });
 
 // Apply form submission
@@ -129,12 +175,19 @@ if (applyForm) {
 
         // Client-side validation for apply form
         const fullName = this.fullName.value.trim();
+        const dateOfBirth = this.dateOfBirth.value;
+        const gender = this.gender.value;
+        const fatherName = this.fatherName.value.trim();
+        const motherName = this.motherName.value.trim();
         const email = this.email.value.trim();
         const phone = this.phone.value.trim();
         const address = this.address.value.trim();
         const state = this.state.value;
         const city = this.city.value.trim();
+        const pincode = this.pincode.value.trim();
         const qualifications = this.qualifications.value.trim();
+        const schoolName = this.schoolName.value.trim();
+        const percentage = this.percentage.value;
         const course = this.course.value;
         const university = this.university.value;
         const intakeYear = this.intakeYear.value;
@@ -146,6 +199,26 @@ if (applyForm) {
         if (!fullName) {
             isValid = false;
             errorMessage += 'Full Name is required.\n';
+        }
+
+        if (!dateOfBirth) {
+            isValid = false;
+            errorMessage += 'Date of Birth is required.\n';
+        }
+
+        if (!gender) {
+            isValid = false;
+            errorMessage += 'Gender selection is required.\n';
+        }
+
+        if (!fatherName) {
+            isValid = false;
+            errorMessage += 'Father\'s Name is required.\n';
+        }
+
+        if (!motherName) {
+            isValid = false;
+            errorMessage += 'Mother\'s Name is required.\n';
         }
 
         if (!email || !/\S+@\S+\.\S+/.test(email)) {
@@ -160,7 +233,7 @@ if (applyForm) {
 
         if (!address) {
             isValid = false;
-            errorMessage += 'Address is required.\n';
+            errorMessage += 'Permanent Address is required.\n';
         }
 
         if (!state) {
@@ -173,9 +246,24 @@ if (applyForm) {
             errorMessage += 'City is required.\n';
         }
 
+        if (!pincode || !/^[0-9]{6}$/.test(pincode)) {
+            isValid = false;
+            errorMessage += 'Valid 6-digit Pincode is required.\n';
+        }
+
         if (!qualifications) {
             isValid = false;
             errorMessage += 'Educational Qualifications are required.\n';
+        }
+
+        if (!schoolName) {
+            isValid = false;
+            errorMessage += 'School/College Name is required.\n';
+        }
+
+        if (!percentage || percentage < 0 || percentage > 100) {
+            isValid = false;
+            errorMessage += 'Valid Percentage/CGPA (0-100) is required.\n';
         }
 
         if (!course) {
@@ -206,14 +294,46 @@ if (applyForm) {
         const formData = new FormData(this);
         const data = Object.fromEntries(formData);
 
-        // Simulate form submission (replace with actual endpoint)
-        console.log('Apply form submitted:', data);
-
-        // Show success popup
-        alert('Thank you for submitting your application! We will contact you soon.');
-
-        const messageDiv = document.getElementById('apply-form-message') || document.getElementById('form-message');
-        messageDiv.innerHTML = '<div class="success-message">Thank you for submitting your application! We will contact you soon.</div>';
-        this.reset();
+        // Send data to Flask server
+        fetch('http://localhost:5000/submit-application', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                // Show success modal
+                const successModal = document.getElementById('success-modal');
+                if (successModal) {
+                    successModal.style.display = 'block';
+                } else {
+                    // Create success modal if it doesn't exist
+                    const modal = document.createElement('div');
+                    modal.id = 'success-modal';
+                    modal.className = 'modal';
+                    modal.innerHTML = `
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Thank You!</h3>
+                            <p>Thank you for submitting your application! We will get back to you soon.</p>
+                            <button class="btn close-modal-btn">Close</button>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    modal.style.display = 'block';
+                }
+                document.getElementById('apply-form-message').innerHTML = '<div class="success-message">Thank you for submitting your application! We will contact you soon.</div>';
+                this.reset();
+            } else {
+                document.getElementById('apply-form-message').innerHTML = '<div class="error-message">Error submitting form. Please try again.</div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('apply-form-message').innerHTML = '<div class="error-message">Error submitting form. Please try again.</div>';
+        });
     });
 }
