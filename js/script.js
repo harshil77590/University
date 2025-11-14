@@ -152,11 +152,8 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     .then(response => response.json())
     .then(result => {
         if (result.success) {
-            // Show success modal
-            const successModal = document.getElementById('success-modal');
-            successModal.style.display = 'block';
-            document.getElementById('form-message').innerHTML = '<div class="success-message">Thank you for your enquiry! We will get back to you soon.</div>';
-            this.reset();
+            // Redirect to thank you page
+            window.location.href = 'thank-you.html';
         } else {
             document.getElementById('form-message').innerHTML = '<div class="error-message">Error submitting form. Please try again.</div>';
         }
@@ -305,28 +302,8 @@ if (applyForm) {
         .then(response => response.json())
         .then(result => {
             if (result.success) {
-                // Show success modal
-                const successModal = document.getElementById('success-modal');
-                if (successModal) {
-                    successModal.style.display = 'block';
-                } else {
-                    // Create success modal if it doesn't exist
-                    const modal = document.createElement('div');
-                    modal.id = 'success-modal';
-                    modal.className = 'modal';
-                    modal.innerHTML = `
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h3>Thank You!</h3>
-                            <p>Thank you for submitting your application! We will get back to you soon.</p>
-                            <button class="btn close-modal-btn">Close</button>
-                        </div>
-                    `;
-                    document.body.appendChild(modal);
-                    modal.style.display = 'block';
-                }
-                document.getElementById('apply-form-message').innerHTML = '<div class="success-message">Thank you for submitting your application! We will contact you soon.</div>';
-                this.reset();
+                // Redirect to thank you page
+                window.location.href = 'thank-you.html';
             } else {
                 document.getElementById('apply-form-message').innerHTML = '<div class="error-message">Error submitting form. Please try again.</div>';
             }
